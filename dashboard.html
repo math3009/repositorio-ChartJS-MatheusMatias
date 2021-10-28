@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>DashBoard</title>
+</head>
+<body>
+    <header>
+        Inter<span>Gold</span>
+    </header>
+    <div class="dash">
+        <div class="graph">
+            <canvas id="salario" style="width: 100%; height: 100%;"></canvas>
+        </div>
+
+        <div class="graph">
+            <canvas id="media" style="width: 100%; height: 100%;"></canvas>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    const salario = {
+    type: "line",
+    data: {
+        labels: ["2011", "2012", "2013", "2014","2015", "2016","2017", "2018","2019", "2020","2021"],
+        datasets: [
+            {
+                label: "Salari Minimo",
+                data: [540.00, 622.00, 678.00 ,720.00, 788.00, 880.00, 937.00, 954.00, 998.00, 1045.00,1100.00],
+                backgroundColor: "red",
+                borderColor: "white"
+            }
+        ]
+    },
+    options: {
+        maintainAspectRatio: false
+    }
+    }
+    const media = {
+        type: "polarArea",
+        data: {
+            labels: ["Norte", "Nordeste", "Sudeste", "Sul", "Centro-Oeste"],
+            datasets: [
+                {
+                    // label: "blue",
+                    data: [1711.00,1539.00,2585.00,2499.00,2498.00],
+                    backgroundColor: [ "rgb(141, 106, 197)", 'rgb(226, 223, 55)', 'rgb(194, 40, 40)', 'rgb(0, 255, 128)', 'rgb(0, 162, 255)']  
+                    // borderColor: "white"
+                }
+            ]
+        },
+        options: {
+            maintainAspectRatio: false
+        }
+        
+    }
+    var myChartLine = new Chart(document.getElementById("salario"), salario); 
+    var media_salario = new Chart(document.getElementById("media"), media);
+</script>
