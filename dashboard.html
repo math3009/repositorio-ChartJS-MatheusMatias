@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        Inter<span>Gold</span>
+        Graph<span>Mota</span>
     </header>
     <div class="dash">
         <div class="graph">
@@ -20,6 +20,11 @@
         <div class="graph">
             <canvas id="media" style="width: 100%; height: 100%;"></canvas>
         </div>
+
+        <div class="graph">
+            <canvas id="desemprego" style="width: 100%; height: 100%;"></canvas>
+        </div>
+
     </div>
 </body>
 </html>
@@ -30,9 +35,9 @@
         labels: ["2011", "2012", "2013", "2014","2015", "2016","2017", "2018","2019", "2020","2021"],
         datasets: [
             {
-                label: "Salari Minimo",
+                label: "Salário Mínimo",
                 data: [540.00, 622.00, 678.00 ,720.00, 788.00, 880.00, 937.00, 954.00, 998.00, 1045.00,1100.00],
-                backgroundColor: "red",
+                backgroundColor: "rgb(75,16,95)",
                 borderColor: "white"
             }
         ]
@@ -47,10 +52,10 @@
             labels: ["Norte", "Nordeste", "Sudeste", "Sul", "Centro-Oeste"],
             datasets: [
                 {
-                    // label: "blue",
+                     label: "Média Salarial por Região",
                     data: [1711.00,1539.00,2585.00,2499.00,2498.00],
-                    backgroundColor: [ "rgb(141, 106, 197)", 'rgb(226, 223, 55)', 'rgb(194, 40, 40)', 'rgb(0, 255, 128)', 'rgb(0, 162, 255)']  
-                    // borderColor: "white"
+                    backgroundColor: [ "rgb(141, 106, 197)", "rgb(226, 223, 55)", "rgb(194, 40, 40)", "rgb(0, 255, 128)", "rgb(0, 162, 255)"],
+                    borderColor: "white"
                 }
             ]
         },
@@ -59,6 +64,26 @@
         }
         
     }
+
+    const desemprego = {
+        type: "bar",
+        data: {
+            labels: ["Brasil(total)", "Norte", "Nordeste", "Sudeste", "Sul", "Centro-Oeste"],
+            datasets: [
+                {
+                    label: "Desemprego por região",
+                    data: [11, 10.6, 13.6, 11.4, 6.8, 9.3],
+                    backgroundColor: ["rgb(0, 162, 255)", "rgb(0, 255, 128)", "rgb(226, 223, 55)", "rgb(141, 106, 197)", "rgb(194, 40, 40)", "rgb(254,134,164)"],
+                    borderColor: "white"
+                }
+            ]
+        },
+        options: {
+            maintainAspectRatio: false
+        }
+    }
+
     var myChartLine = new Chart(document.getElementById("salario"), salario); 
     var media_salario = new Chart(document.getElementById("media"), media);
+    var desemprego_regiao = new Chart(document.getElementById ("desemprego"), desemprego);
 </script>

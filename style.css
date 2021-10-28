@@ -6,14 +6,16 @@ header{
     height: 100px;
     background-color: #000;
     border-bottom: 2px solid;
-    border-color: rgb(139, 15, 15);
+    border-color: rgb(254,134,164);
     color: white;
+    font-weight: bold;
     font-size: 60px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
 }
 header span{
-    color: red;
+    color: rgb(254,134,164);
 }
 
 .graph{
